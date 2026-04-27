@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const userSchema = new Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -25,10 +25,14 @@ const userSchema = new Schema(
     refreshToken: {
       type: String,
     },
+    role:{
+      default: "user"
+    }
   },
   {
     timestamps: true,
   }
 );
 
-export const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+export { User };
