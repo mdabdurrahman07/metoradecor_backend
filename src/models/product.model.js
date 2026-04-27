@@ -31,6 +31,7 @@ const productSchema = new mongoose.Schema(
       {
         url: String,
         public_id: String,
+        required: [true, "Please add product images"],
       },
     ],
   },
