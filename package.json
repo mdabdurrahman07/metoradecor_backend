@@ -1,0 +1,22 @@
+{
+  "name": "metoradecor_backend",
+  "version": "1.0.0",
+  "description": "A rest api javascript based backend for Metora Decor 2026",
+  "keywords": [
+    "backend",
+    "js",
+    "nodejs",
+    "express",
+    "mongoose",
+    "jwt",
+    "cloudnary",
+    "metoraDecor"
+  ],
+  "license": "ISC",
+  "author": "MD Abdur Rahman Nur Jamil",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
