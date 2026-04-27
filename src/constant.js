@@ -1,1 +1,1 @@
-export const DB_NAME = "MetoraDecorDB"
+export const DB_NAME = "MetoraDecorDB";
