@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -26,6 +27,7 @@ const userSchema = new mongoose.Schema(
       type: String,
     },
     role: {
+      type: String,
       default: "user",
     },
   },
@@ -35,10 +37,9 @@ const userSchema = new mongoose.Schema(
 );
 
 // using pre to convert plain password to hash
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
 // checking the plain  password with the hash password using mongoose method
 userSchema.methods.isPasswordCorrect = async function (password) {
